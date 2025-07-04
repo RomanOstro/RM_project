@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="cardLayout" viewBox="0 0 290 296">
+<g filter="url(#a)">
+<path fill="#fff" fill-opacity=".05" d="M284.218 249.988c3.592-2.197 5.782-6.105 5.782-10.316V12.0933C290 5.4143 284.586 0 277.907 0H12.0934C5.4144 0 0 5.4144 0 12.0933V283.907C0 290.586 5.4144 296 12.0934 296H205.6c2.227 0 4.411-.615 6.31-1.777l72.308-44.235Z"/><path stroke="url(#b)" stroke-opacity=".7" stroke-width=".7558" d="M289.622 239.672c0 4.08-2.122 7.865-5.602 9.994L211.713 293.9a11.7128 11.7128 0 0 1-6.113 1.722H12.0934c-6.4703 0-11.7155-5.245-11.7155-11.715V12.0933C.378 5.6231 5.6231.3779 12.0934.3779H277.907c6.47 0 11.715 5.2452 11.715 11.7154V239.672Z"/></g><defs><linearGradient id="b" x1="-25.4789" x2="159.097" y1="-10.2162" y2="327.342" gradientUnits="userSpaceOnUse"><stop stop-color="#84F729"/><stop offset="1" stop-color="#15BFFD"/></linearGradient><filter id="a" width="305.117" height="311.117" x="-7.5583" y="-7.5583" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="3.7792"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_23_19"/>
+<feBlend in="SourceGraphic" in2="effect1_backgroundBlur_23_19" result="shape"/></filter>
+</defs>
+</svg>

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Thin"), local("TTTravels-Thin"),
+    url("../fonts/TTTravels-Thin.woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels ExtraLight"), local("TTTravels-ExtraLight"),
+    url("../fonts/TTTravels-ExtraLight.woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Light"), local("TTTravels-Light"),
+    url("../fonts/TTTravels-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Regular"), local("TTTravels-Regular"),
+    url("../fonts/TTTravels-Regular.woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Medium"), local("TTTravels-Medium"),
+    url("../fonts/TTTravels-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels DemiBold"), local("TTTravels-DemiBold"),
+    url("../fonts/TTTravels-DemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Bold"), local("TTTravels-Bold"),
+    url("../fonts/TTTravels-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels ExtraBold"), local("TTTravels-ExtraBold"),
+    url("../fonts/TTTravels-ExtraBold.woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels ExtraBold Italic"), local("TTTravels-ExtraBoldItalic"),
+    url("../fonts/TTTravels-ExtraBoldItalic.woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Travels";
+  src: local("TT Travels Black"), local("TTTravels-Black"),
+    url("../fonts/TTTravels-Black.woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
