@@ -5,14 +5,16 @@ import 'swiper/css'; // что бы импорты заработали, при�
 import 'swiper/css/navigation';
 import { SwiperWrapper, ButtonIconNext, ButtonIconPrev, SwiperButton } from "./sliderStile";
 
-type Id = { id?: string }; // делаем обязательный тип id что бы расширить тип данных
+type TId = {
+  id?: number;
+}; // делаем обязательный тип id что бы расширить тип данных
 
-interface TSlider<T extends Id> { // расширяем тип данных
+interface TSlider<T extends TId> { // расширяем тип данных
   data: T[];
   children: (item: T) => ReactNode
 }
 
-export const Slider = <T extends Id,>(props: TSlider<T>) => {
+export const Slider = <T extends TId,>(props: TSlider<T>) => {
   const { data, children } = props;
 
   return (

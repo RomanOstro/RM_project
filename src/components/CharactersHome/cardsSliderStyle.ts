@@ -5,6 +5,9 @@ export const ContainerCharacters = styled.div`
   max-width: 1720px;
   padding: 107px 32px 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 `
 
 

@@ -1,18 +1,19 @@
-
 import './assets/styles/App.css'
 import { Home } from './pages/Home/Home'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 
+const queryClient = new QueryClient();
 
-
-function App() {
+export function App() {
 
 
   return (
     <>
-      <Home />
+      <QueryClientProvider client={queryClient}>
+        <Home />
+      </QueryClientProvider>
     </>
   )
 }
 
-export default App
