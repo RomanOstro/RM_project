@@ -3,8 +3,8 @@ import { Card } from '../UI/Card/Card';
 import { Button } from '../UI/Button/Button';
 import { Slider } from '../UI/Slider/Slider';
 import UnknowgImage from '../../assets/images/card-image-unknown.jpeg'
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getCharacters } from '../../apiCharacters';
+import { useQuery } from '@tanstack/react-query';
+import { getCharacters } from '../../apiHome';
 import { useState } from 'react';
 
 
@@ -12,8 +12,6 @@ import { useState } from 'react';
 export const CharactersHome = () => {
   const [page] = useState<number>(1)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const queryClient = useQueryClient()
 
   const { data, error, isPending } = useQuery({
     queryKey: ['getCharacter', page],
@@ -21,7 +19,7 @@ export const CharactersHome = () => {
   })
 
   if (isPending) {
-    return <h1 style={{ fontSize: '40px'}}>Loading...</h1>
+    return <h1 style={{ fontSize: '40px', textAlign: 'center', paddingBlockStart: '100px' }}>Loading...</h1>
   }
 
   if (error) {

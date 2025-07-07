@@ -12,16 +12,19 @@ type TId = {
 interface TSlider<T extends TId> { // расширяем тип данных
   data: T[];
   children: (item: T) => ReactNode
+  slidesPerView?: number;
 }
 
 export const Slider = <T extends TId,>(props: TSlider<T>) => {
-  const { data, children } = props;
+  const { data, children, slidesPerView = 4 } = props;
 
   return (
     <SwiperWrapper>
       <Swiper
         modules={[Navigation]}
-        slidesPerView={4}
+        spaceBetween={10}
+        slidesPerView={slidesPerView}
+        speed={1000}
         navigation={{
           prevEl: '.swiper__button-prev',
           nextEl: '.swiper__button-next',
