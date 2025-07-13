@@ -28,7 +28,6 @@ export const Slider = <T extends TId,>(props: TSlider<T>) => {
         navigation={{
           prevEl: '.swiper__button-prev',
           nextEl: '.swiper__button-next',
-
         }}
       >
         {data.map((item: T, index) => {

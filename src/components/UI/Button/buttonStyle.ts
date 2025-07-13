@@ -13,10 +13,9 @@ export const ButtonElement = styled.button<TBUttonProps>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: ${props => props.$background ?? 'transparent'};
-  border:${props => props.$border ?? '1px solid currentColor'};
-  padding:${props => props.$padding ?? '0'};
-  border-radius: ${props => props.$borderRadius ?? '0'};
-  outline:${props => props.$outline ?? 'none'};
-`
-
+  background: ${(props) => props.$background ?? "transparent"};
+  border: ${(props) => props.$border ?? "1px solid currentColor"};
+  padding: ${(props) => props.$padding ?? "0"};
+  border-radius: ${(props) => props.$borderRadius ?? "0"};
+  outline: ${(props) => props.$outline ?? "none"};
+`;

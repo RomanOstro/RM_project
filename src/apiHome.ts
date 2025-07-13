@@ -3,36 +3,74 @@ import type {
   IEpisode,
   ILocation,
   IResponse,
+  ISingleCharacter,
 } from "./types/apiTypes";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 
+interface IGetParams {
+  signal: AbortSignal;
+  page?: number;
+  name?: string;
+}
+
 // Общий запрос персонажей
-export const getCharacters = (page: number = 1): Promise<ICharacter[]> => {
-  return fetch(`${BASE_URL}/character/?page=${page}`)
-    .then((resronse) => resronse.json())
-    .then((data: IResponse<ICharacter>) => data.results)
-    .catch((err) => {
-      throw new Error(`${err.message}`);
-    });
+export const getCharacters = (
+  props: IGetParams
+): Promise<IResponse<ICharacter>> => {
+  const { signal, page, name } = props;
+  const url = new URL(`${BASE_URL}/character`);
+  if (name) {
+    url.searchParams.set("name", name);
+  } else if (page !== undefined) {
+    url.searchParams.set("page", page.toString());
+  }
+  return fetch(url, { signal })
+    .then((res) => res.json())
+    .catch((err) => new Error(`data not found ${err}`));
+};
+
+//Запрос информации на 1 персонажа
+export const getSingleCharacter = (
+  id: number,
+  signal: AbortSignal
+): Promise<ISingleCharacter> => {
+  return fetch(`${BASE_URL}/character/${id}`, { signal }).then((resronse) =>
+    resronse.json()
+  );
 };
 
 // запрос Episodes
-export const getEpisodes = (page: number = 1): Promise<IEpisode[]> => {
-  return fetch(`${BASE_URL}/episode/?page=${page}`)
-    .then((res) => res.json())
-    .then((data: IResponse<IEpisode>) => data.results)
-    .catch((err) => {
-      throw new Error(`${err.message}`);
-    });
-};
+export const getEpisodes = async (
+  props: IGetParams
+): Promise<IResponse<IEpisode>> => {
+  const { page, name, signal } = props;
+  const url = new URL(`${BASE_URL}/episode`);
+  if (name) {
+    url.searchParams.set("name", name);
+  } else if (page !== undefined) {
+    url.searchParams.set("page", page.toString());
+  }
+
+  const res = await fetch(url, { signal });
+  if (!res.ok) throw new Error(`response error: ${res.status}`);
+  return res.json()
+  };
 
 // запрос Location
-export const getLocation = (page: number = 1): Promise<ILocation[]> => {
-  return fetch(`${BASE_URL}/location/?page=${page}`)
-    .then((res) => res.json())
-    .then((data: IResponse<ILocation>) => data.results)
-    .catch((err) => {
-      throw new Error(`${err.message}`);
-    });
-};
+export const getLocation = async (
+  props: IGetParams
+): Promise<IResponse<ILocation>> => {
+  const { page, name, signal } = props;
+  const url = new URL(`${BASE_URL}/location`);
+  if (name) {
+    url.searchParams.set("name", name);
+  } else if (page !== undefined) {
+    url.searchParams.set("page", page.toString());
+  }
+
+  const res = await fetch(url, { signal });
+  if (!res.ok) throw new Error(`response error: ${res.status}`);
+  return res.json()
+  };
+

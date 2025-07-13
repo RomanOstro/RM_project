@@ -4,6 +4,7 @@ import BubleImage from '../../assets/images/buble.png';
 import { BubleImg, Elements, Gradient, HeaderContainer, ButtonText, HeaderTitleblock, HeaderTitleBottom, HeaderTitleTop, HeadingBlock, HeadingBlockDescription, Italic } from "./style";
 import { Logo } from "../Logo/Logo";
 import ButtonIcon from '../../assets/icons/button-watch-icon.svg?react';
+import { Link } from "react-router-dom";
 
 
 
@@ -14,10 +15,9 @@ export const Header = () => {
   return (
 
     <HeaderContainer>
-      <Logo />
+      <Link to={'/'}><Logo /></Link>
       <Elements>
         <BubleImg src={`${BubleImage}`} alt="buble decorate element" />
-        {/* <PortalImg src=''/> */}
       </Elements>
       <HeaderTitleblock >
         <HeaderTitleTop>
@@ -35,6 +35,7 @@ export const Header = () => {
 
 
       <HeadingBlock>
+
         <Button
           $background='var(--bg-button-gradient)'
           $border="none"
@@ -45,12 +46,14 @@ export const Header = () => {
           <ButtonIcon />
           <ButtonText>Watch Now</ButtonText>
         </Button>
+
+
         <HeadingBlockDescription>
           Блестящий, но вечно пьяный учёный Рик похищает своего капризного внука-подростка Морти, чтобы вместе с ним пускаться во все тяжкие в других мирах и альтернативных измерениях
         </HeadingBlockDescription>
       </HeadingBlock>
 
 
-    </HeaderContainer>
+    </HeaderContainer >
   )
 }

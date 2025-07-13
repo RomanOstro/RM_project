@@ -1,4 +1,4 @@
-import { ContainerCharacters, HeadingBlock, HeadingTitle } from './cardsSliderStyle';
+import { ContainerCharacters, HeadingBlock, HeadingTitle } from './charactersHomeStyle';
 import { Card } from '../UI/Card/Card';
 import { Button } from '../UI/Button/Button';
 import { Slider } from '../UI/Slider/Slider';
@@ -6,16 +6,15 @@ import UnknowgImage from '../../assets/images/card-image-unknown.jpeg'
 import { useQuery } from '@tanstack/react-query';
 import { getCharacters } from '../../apiHome';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 export const CharactersHome = () => {
-  const [page] = useState<number>(1)
-
 
   const { data, error, isPending } = useQuery({
-    queryKey: ['getCharacter', page],
-    queryFn: () => getCharacters(page),
+    queryKey: ['getCharacter'], //page добавляем для отслеживания изменения ключа page, тогда будет перерендер(как массив зависимостей)
+    queryFn: (meta) => getCharacters({ signal: meta.signal}),
   })
 
   if (isPending) {
@@ -30,14 +29,16 @@ export const CharactersHome = () => {
     <ContainerCharacters>
       <HeadingBlock>
         <HeadingTitle>Meet the cast</HeadingTitle>
-        <Button
-          $border='1px solid var(--green)'
-          $borderRadius='8px'
-          $padding='10px 24px'
-        >View All</Button>
+        <Link to={'/cast'}>
+          <Button
+            $border='1px solid var(--green)'
+            $borderRadius='8px'
+            $padding='10px 24px'
+          >View All</Button>
+        </Link>
       </HeadingBlock>
 
-      {data && <Slider data={data}>
+      {data && <Slider data={data.results}>
         {(item) => {
           return <Card
             name={item.name ? item.name : ''}

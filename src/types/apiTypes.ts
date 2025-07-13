@@ -30,10 +30,19 @@ export interface ICharacter {
   url?: string;
 }
 
-//Универсальный тип запроса
-export interface IResponse<T> {
-  info: IApiInfo;
-  results: T[];
+//
+export interface ISingleCharacter {
+  id: number;
+  name: string;
+  status: "Dead" | "Alive" | "unknown";
+  type: string;
+  gender: "Female" | "Male" | "Genderless" | "unknown";
+  origin: ICharacterOrigin;
+  location: ICharacterLocatyon;
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
 }
 
 // Episode
@@ -56,4 +65,10 @@ export interface ILocation {
   residents: string[];
   url: string;
   created: string;
+}
+
+//Универсальный тип запроса
+export interface IResponse<T> {
+  info: IApiInfo;
+  results: T[];
 }
