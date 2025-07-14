@@ -1,18 +1,20 @@
 import { getCharacters } from "../../apiHome"
 import { useQuery } from '@tanstack/react-query';
 import { Content, MissingSection } from "./theCastStyle"
-import { useState } from "react";
 import { Card } from "../../components/UI/Card/Card";
 import { Link, useSearchParams } from "react-router-dom";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 export const TheCast = () => {
-  const [page, setCurrentPage] = useState<number>(1)
-  const [searchParams] = useSearchParams();
-  const name = searchParams.get('name') || ''
+const [searchParams] = useSearchParams();
+const name = searchParams.get('name') || ''
+const currentPage = Number(searchParams.get('page')) || 1
+
+
 
   const { data, isPending, isError } = useQuery({
-    queryKey: ['getCharacter', name, page],
-    queryFn: (meta) => getCharacters({ page, name, signal: meta.signal }),
+    queryKey: ['getCharacter', name, currentPage],
+    queryFn: (meta) => getCharacters({ page: currentPage, name, signal: meta.signal }),
   })
 
   return (
@@ -27,6 +29,7 @@ export const TheCast = () => {
             </Link>
           })}
         </Content>}
+        <Pagination totalPage={data?.info?.pages || 1}/>
 
       {isError &&
         <MissingSection><p>Ничего не найдено</p></MissingSection>

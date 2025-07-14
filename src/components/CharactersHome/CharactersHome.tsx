@@ -5,7 +5,6 @@ import { Slider } from '../UI/Slider/Slider';
 import UnknowgImage from '../../assets/images/card-image-unknown.jpeg'
 import { useQuery } from '@tanstack/react-query';
 import { getCharacters } from '../../apiHome';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -24,6 +23,7 @@ export const CharactersHome = () => {
   if (error) {
     return <h1 style={{ fontSize: '40px' }}>{error.message}</h1>
   }
+
 
   return (
     <ContainerCharacters>
