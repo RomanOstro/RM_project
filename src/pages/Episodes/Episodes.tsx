@@ -17,6 +17,8 @@ export const Episodes = () => {
     })
   })
 
+  console.log(data?.results)
+
   return (
     <Content>
       {data && data?.results.map((episode) => {

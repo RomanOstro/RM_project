@@ -18,9 +18,7 @@ export const Input = (props: IInputProps) => {
     } else {
       setSearchParam({})
     }
-
   }
-
 
   return (
     <>

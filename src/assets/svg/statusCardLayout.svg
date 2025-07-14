@@ -1,0 +1,8 @@
+<svg class="rightTopCardLayout" viewBox="0 0 240 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="240" height="174" rx="8" fill="white" fill-opacity="0.05"></rect>
+<rect x="0.5" y="0.5" width="239" height="173" rx="7.5" stroke="url(#paint0_linear_1_3082)" stroke-opacity="0.7">
+</rect>
+<defs><linearGradient id="paint0_linear_1_3082" x1="261.086" y1="180.005" x2="174.097" y2="-43.9661" gradientUnits="userSpaceOnUse">
+<stop stop-color="#84F729"></stop><stop offset="1" stop-color="#15BFFD"></stop>
+</linearGradient></defs>
+</svg>

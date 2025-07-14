@@ -43,6 +43,7 @@ export interface ISingleCharacter {
   episode: string[];
   url: string;
   created: string;
+  species: string;
 }
 
 // Episode

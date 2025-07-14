@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" class="profileImageLayout" viewBox="0 0 400 400">
+<rect width="400" height="400" fill="#fff" fill-opacity=".05" rx="8"/>
+<rect width="399" height="399" x=".5" y=".5" stroke="url(#a)" stroke-opacity=".7" rx="7.5"/>
+<defs><linearGradient id="a" x1="435.143" x2="188.494" y1="413.806" y2="-46.6065" gradientUnits="userSpaceOnUse">
+<stop stop-color="#84F729"/>
+<stop offset="1" stop-color="#15BFFD"/></linearGradient></defs>
+</svg>

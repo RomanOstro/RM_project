@@ -54,8 +54,8 @@ export const getEpisodes = async (
 
   const res = await fetch(url, { signal });
   if (!res.ok) throw new Error(`response error: ${res.status}`);
-  return res.json()
-  };
+  return res.json();
+};
 
 // запрос Location
 export const getLocation = async (
@@ -71,6 +71,12 @@ export const getLocation = async (
 
   const res = await fetch(url, { signal });
   if (!res.ok) throw new Error(`response error: ${res.status}`);
-  return res.json()
-  };
+  return res.json();
+};
 
+//promise.all - использую для запросов эпизодов
+
+export const multiFatch = async (urls: string[]): Promise<IEpisode[]> => {
+  const response = await Promise.all(urls.map((url) => fetch(url)));
+  return Promise.all(response.map((response) => response.json()));
+};

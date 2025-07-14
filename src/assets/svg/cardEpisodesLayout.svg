@@ -1,0 +1,7 @@
+<svg class="rightBottomCardLayout" viewBox="0 0 800 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="430" rx="8" fill="white" fill-opacity="0.05"></rect>
+<rect x="0.5" y="0.5" width="799" height="429" rx="7.5" stroke="url(#paint0_linear_1_3043)" stroke-opacity="0.7"></rect>
+<defs><linearGradient id="paint0_linear_1_3043" x1="870.287" y1="431.392" x2="710.269" y2="-141.653" gradientUnits="userSpaceOnUse">
+<stop stop-color="#84F729"></stop><stop offset="1" stop-color="#15BFFD">
+</stop></linearGradient>
+</defs></svg>
