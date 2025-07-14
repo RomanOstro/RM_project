@@ -3,7 +3,7 @@ import { LogoContainer } from './logoStyle'
 
 
 interface ILogoProps {
-  $PaddingB: string;
+  $PaddingB?: string;
   $marginB?: string;
 }
 

@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation, useNavigate} from "react-router-dom"
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom"
 import { Logo } from "../Logo/Logo"
 import { CastContainer, ContentContainer, ContentTitle, SearchBox, CastHeading } from "./universeLayoutStyle"
 import { Select } from "../UI/Select/Select"
@@ -14,15 +14,15 @@ export const UniverseLayout = () => {
   const location = useLocation(); // отслеживаем текущий путь, для изменения pathToSection
   const current = pathToSection[location.pathname] || pathToSection['/cast'] // определяем текущее состояние pathToSection по url
   const [sectionTitle, setSectionTitle] = useState<string>(current.state); // стейт заголовка лейаута
-  const[selectState, setSelectState] = useState<TSectionState>(current.select) // стейт селекта
-  
+  const [selectState, setSelectState] = useState<TSectionState>(current.select) // стейт селекта
+
 
   useEffect(() => {
     const current = pathToSection[location.pathname] || pathToSection['/cast'] // определяем текущее состояние pathToSection по url
     setSectionTitle(current.state);
     setSelectState(current.select)
   }, [location.pathname])
-  
+
   const selecthandler = (value: TSectionState) => {
     setSectionTitle(current.state)
     if (value === ESelectState.CHARACTER) navigate('/cast')
@@ -31,7 +31,6 @@ export const UniverseLayout = () => {
   };
 
 
-    console.log(location)
   return (
 
     <CastContainer>
