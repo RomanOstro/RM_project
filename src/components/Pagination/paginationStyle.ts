@@ -38,7 +38,7 @@ export const PaginationItem = styled.li`
 `;
 
 interface IPaginationButton {
-  isActive?: boolean
+  $isActive?: boolean
 }
 
 export const PaginationButton = styled.button<IPaginationButton>`
@@ -46,7 +46,7 @@ export const PaginationButton = styled.button<IPaginationButton>`
   align-items: center;
   justify-content: center;
   border: none;
-  background: ${({isActive}) => isActive? 'var(--blue)': 'transparent'};
+  background: ${({$isActive}) => $isActive? 'var(--blue)': 'transparent'};
   outline: none;
   color: var(--main-color);
   font-size: 1rem;

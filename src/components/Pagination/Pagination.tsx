@@ -32,9 +32,6 @@ export const Pagination = (props: IPaginationProps) => {
     setSearchParams({ page: prevPage })
   }
 
-  console.log(currentPage)
-
-
   return (
     <PaginationContainer>
       <PaginationList>
@@ -48,7 +45,7 @@ export const Pagination = (props: IPaginationProps) => {
         {currentPage > 1 && <PaginationItem ><PaginationButton onClick={prevHenpler}>{currentPage - 1}</PaginationButton></PaginationItem>}
 
         <PaginationItem>
-          <PaginationButton disabled isActive={true}>{currentPage}</PaginationButton>
+          <PaginationButton disabled $isActive={true}>{currentPage}</PaginationButton>
         </PaginationItem>
 
         {currentPage < totalPage && <PaginationItem ><PaginationButton onClick={nextHendler}>{currentPage + 1}</PaginationButton></PaginationItem>}

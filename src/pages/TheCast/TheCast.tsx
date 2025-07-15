@@ -6,13 +6,13 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Pagination } from "../../components/Pagination/Pagination";
 
 export const TheCast = () => {
-const [searchParams] = useSearchParams();
-const name = searchParams.get('name') || ''
-const currentPage = Number(searchParams.get('page')) || 1
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get('name') || ''
+  const currentPage = Number(searchParams.get('page')) || 1
 
 
 
-  const { data, isPending, isError } = useQuery({
+  const { data, isPending, error } = useQuery({
     queryKey: ['getCharacter', name, currentPage],
     queryFn: (meta) => getCharacters({ page: currentPage, name, signal: meta.signal }),
   })
@@ -29,11 +29,12 @@ const currentPage = Number(searchParams.get('page')) || 1
             </Link>
           })}
         </Content>}
-        <Pagination totalPage={data?.info?.pages || 1}/>
-
-      {isError &&
+      {error &&
         <MissingSection><p>Ничего не найдено</p></MissingSection>
       }
+      <Pagination totalPage={data?.info?.pages || 1} />
+
+
 
     </>
   )

@@ -3,27 +3,32 @@ import { getEpisodes } from "../../apiHome"
 import { TextCard } from "../../components/UI/TextCard/TextCard"
 import { useSearchParams } from "react-router-dom"
 import { Content, MissingSection } from "./episodesStyle"
+import { Pagination } from "../../components/Pagination/Pagination"
 
 
 export const Episodes = () => {
   const [searchParam] = useSearchParams();
   const name = searchParam.get('name') || '';
+  const page = Number(searchParam.get('page')) || 1;
 
   const { data, isPending } = useQuery({
-    queryKey: ['episodes', name],
+    queryKey: ['episodes', name, page],
     queryFn: (meta) => getEpisodes({
       signal: meta.signal,
-      name
+      name,
+      page
     })
   })
 
   return (
-    <Content>
-      {data && data?.results.map((episode) => {
-        return <TextCard key={episode.id} title={`#${episode.id}`} description={episode.name} />
-      })}
-
+    <>
+      <Content>
+        {data && data?.results.map((episode) => {
+          return <TextCard key={episode.id} title={`#${episode.id}`} description={episode.name} />
+        })}
+      </Content>
       {isPending && <MissingSection><p>Loading...</p></MissingSection>}
-    </Content>
+      <Pagination totalPage={data?.info.pages || 1} />
+    </>
   )
 }
