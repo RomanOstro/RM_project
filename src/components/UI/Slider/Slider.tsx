@@ -7,16 +7,18 @@ import { SwiperWrapper, ButtonIconNext, ButtonIconPrev, SwiperButton } from "./s
 
 type TId = {
   id?: number;
+
 }; // делаем обязательный тип id что бы расширить тип данных
 
 interface TSlider<T extends TId> { // расширяем тип данных
   data: T[];
   children: (item: T) => ReactNode
   slidesPerView?: number;
+  $name?: string;
 }
 
 export const Slider = <T extends TId,>(props: TSlider<T>) => {
-  const { data, children, slidesPerView = 4 } = props;
+  const { data, children, slidesPerView = 4, $name } = props;
 
   return (
     <SwiperWrapper>
@@ -26,8 +28,8 @@ export const Slider = <T extends TId,>(props: TSlider<T>) => {
         slidesPerView={slidesPerView}
         speed={1000}
         navigation={{
-          prevEl: '.swiper__button-prev',
-          nextEl: '.swiper__button-next',
+          prevEl: `.swiper__button-prev_${$name}`,
+          nextEl: `.swiper__button-next_${$name}`,
         }}
       >
         {data.map((item: T, index) => {
@@ -37,15 +39,14 @@ export const Slider = <T extends TId,>(props: TSlider<T>) => {
             </SwiperSlide>)
         })}
 
-        <SwiperButton $position="left">
-          <ButtonIconPrev />
-        </SwiperButton>
-
-        <SwiperButton >
-          <ButtonIconNext />
-        </SwiperButton>
-
       </Swiper>
+      <SwiperButton $name={$name} $position="left">
+        <ButtonIconPrev />
+      </SwiperButton>
+
+      <SwiperButton $name={$name}>
+        <ButtonIconNext />
+      </SwiperButton>
 
     </SwiperWrapper>
   )

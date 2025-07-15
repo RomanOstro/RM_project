@@ -16,6 +16,7 @@ export const PageContainer = styled.section`
   background-position: center;
   object-fit: cover;
   overflow: hidden;
+  padding-bottom: 86px;
 `;
 
 export const PageContent = styled.div`
@@ -67,18 +68,38 @@ export const ImageWrapper = styled.div`
   width: 300px;
 `;
 
-//--------
+//-------- Декор
 
 export const Separator = styled(SeparatorImage)`
   height: 320px;
   width: 2px;
 `;
 
+export const BgTextWrapper = styled.div`
+  left: -5%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%) rotate(-90deg);
+  transform: translate(-50%) rotate(-90deg);
+`;
+
+export const BgText = styled.p`
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-fill-color: #191d29;
+  background: linear-gradient(45deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  font-size: 100px;
+  font-weight: 800;
+  opacity: 0.1;
+  text-align: center;
+`;
+
 //-----castDetails
 export const CastDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 10px;
 `;
 
 // --- status Block

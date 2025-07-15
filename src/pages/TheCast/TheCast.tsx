@@ -34,8 +34,6 @@ export const TheCast = () => {
       }
       <Pagination totalPage={data?.info?.pages || 1} />
 
-
-
     </>
   )
 }

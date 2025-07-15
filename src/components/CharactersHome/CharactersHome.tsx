@@ -38,7 +38,7 @@ export const CharactersHome = () => {
         </Link>
       </HeadingBlock>
 
-      {data && <Slider data={data.results}>
+      {data && <Slider $name={'Character'}data={data.results} slidesPerView={5}>
         {(item) => {
           return <Card
             name={item.name ? item.name : ''}

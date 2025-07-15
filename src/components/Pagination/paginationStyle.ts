@@ -38,7 +38,7 @@ export const PaginationItem = styled.li`
 `;
 
 interface IPaginationButton {
-  $isActive?: boolean
+  $isActive?: boolean;
 }
 
 export const PaginationButton = styled.button<IPaginationButton>`
@@ -46,7 +46,7 @@ export const PaginationButton = styled.button<IPaginationButton>`
   align-items: center;
   justify-content: center;
   border: none;
-  background: ${({$isActive}) => $isActive? 'var(--blue)': 'transparent'};
+  background: ${({ $isActive }) => ($isActive ? "var(--blue)" : "transparent")};
   outline: none;
   color: var(--main-color);
   font-size: 1rem;
@@ -56,6 +56,9 @@ export const PaginationButton = styled.button<IPaginationButton>`
   height: 2.4rem;
   min-width: 2.4rem;
   width: auto;
+  transition: color 0.2s;
+
+  &:hover:not(:disabled) {
+    color: #fbff00ff;
+  }
 `;
-// export const
-// export const

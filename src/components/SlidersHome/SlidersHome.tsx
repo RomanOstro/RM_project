@@ -24,14 +24,14 @@ export const SlidersHome = () => {
 
       <SliderList>
         <ListTitle>Episodes</ListTitle>
-        {episodeData && <Slider data={episodeData.results} slidesPerView={3}>
+        {episodeData && <Slider $name={'episode'} data={episodeData.results} slidesPerView={4}>
           {(episode) => <TextCard title={episode.episode} description={episode.name} />}
         </Slider>}
       </SliderList>
 
       <SliderList>
         <ListTitle>Locations</ListTitle>
-        {locationsData && <Slider data={locationsData.results} slidesPerView={3}>
+        {locationsData && <Slider $name={'location'} data={locationsData.results} slidesPerView={4}>
           {(location) => <TextCard title={`#${location.id}`} description={location.dimension}></TextCard>}
         </Slider>}
       </SliderList>

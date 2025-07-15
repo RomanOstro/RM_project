@@ -22,7 +22,7 @@ export const SliderList = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1720px;
-  padding: 110px 72px 0;
+  padding: 110px 32px 0;
 `;
 
 export const ListTitle = styled.div`

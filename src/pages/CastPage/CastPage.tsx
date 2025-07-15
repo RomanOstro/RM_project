@@ -11,7 +11,9 @@ import {
   EpisodesContainerLayout,
   EpisodeList,
   EpisodeListItem,
-  EpisodesInfo
+  EpisodesInfo,
+  BgTextWrapper,
+  BgText
 } from "./castPagSstyle"
 import { Logo } from "../../components/Logo/Logo"
 import StatusIcon from '../../assets/icons/heart -icon.png'
@@ -58,6 +60,10 @@ export const CastPage = () => {
         $PaddingB={'0px'}
         $marginB="0px" /></Link>
       <PageContent>
+
+        <BgTextWrapper>
+          <BgText>{dataCharacterSingle?.name}</BgText>
+        </BgTextWrapper>
 
         <CastImageWrapper>
           <CastName>{dataCharacterSingle?.name}</CastName>

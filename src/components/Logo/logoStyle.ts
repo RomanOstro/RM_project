@@ -10,5 +10,5 @@ margin: 0 auto;
 padding-block-start: 60px;
 padding-block-end:${prop => prop.$paddingB ?? '60px'};
 width: 227px;
-margin-block-end: ${prop => prop.$marginB ?? '27px'};
+margin-block-end: ${prop => prop.$marginB ?? '0px'};
 `
