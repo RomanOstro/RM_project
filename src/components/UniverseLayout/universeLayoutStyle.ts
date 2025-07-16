@@ -17,6 +17,14 @@ export const ContentContainer = styled.div`
   max-width: 1720px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (width <= 1740px) {
+    max-width: 1420px;
+    padding-block-start: 60px;
+  }
+  @media screen and (width <= 820px) {
+    padding-block-start: 1px;
+  }
 `;
 
 export const Content = styled.section`
@@ -29,12 +37,21 @@ export const CastHeading = styled.section`
   justify-content: space-between;
   align-items: center;
   padding-block-end: 30px;
+
+  @media screen and (width <= 820px) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
 `;
 
 export const ContentTitle = styled.h2`
   color: var(--blue);
   font-size: 64px;
   font-weight: 600;
+
+  @media screen and (width <= 820px) {
+    font-size: 50px;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -45,4 +62,8 @@ export const SearchBox = styled.div`
   align-items: center;
   justify-content: center;
   width: 420px;
+
+  @media screen and (width <= 820px) {
+    width: 320px;
+  }
 `;

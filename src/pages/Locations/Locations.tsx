@@ -23,7 +23,7 @@ export const Locations = () => {
     <>
       <Content>
         {locationsData?.results && locationsData?.results?.map((location) => {
-          return <TextCard key={location.id} title={location.name} description={location.dimension} />
+          return <TextCard key={location.id} title={`#${location.id}`} description={location.dimension} />
         })}
       </Content>
       {isPending && <MissingSection><p>Loading...</p></MissingSection>}

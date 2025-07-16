@@ -1,11 +1,7 @@
 import { styled } from "styled-components";
+import { Content } from "../Locations/locationsStyle";
 
-export const Content = styled.section`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-  align-self: center;
-`;
+export const EpisodesContent = styled(Content)``;
 
 export const MissingSection = styled.div`
   display: flex;

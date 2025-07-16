@@ -25,7 +25,7 @@ export const TheCast = () => {
         <Content>
           {data?.results?.map((charecter) => {
             return <Link key={charecter.id} to={{ pathname: `/cast/${charecter.id}` }}>
-              <Card image={charecter.image!} name={charecter.name!} />
+              <Card adaptive={true} image={charecter.image!} name={charecter.name!} />
             </Link>
           })}
         </Content>}

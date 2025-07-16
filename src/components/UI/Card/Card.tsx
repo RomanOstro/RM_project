@@ -1,21 +1,23 @@
-import { CardContainer, CardImage, CardTitle, ImageBlock, LayautCard } from "./cardStyle"
+import { CardContainer, CardContent, CardImage, CardTitle, ImageBlock, LayautCard } from "./cardStyle"
 interface TCard {
   image: string;
   name: string;
+  adaptive?: boolean;
 }
 export const Card = (props: TCard) => {
 
-  const { name, image } = props;
+  const { name, image, adaptive } = props;
 
   return (
-    <CardContainer>
+    <CardContainer $adaptive={adaptive}>
       <LayautCard />
-      <ImageBlock>
-        <CardImage src={image} alt={name} />
-      </ImageBlock>
+      <CardContent $adaptive={adaptive}>
+        <ImageBlock $adaptive={adaptive}>
+          <CardImage src={image} alt={name} />
+        </ImageBlock>
 
-      <CardTitle>{name}</CardTitle>
-
+        <CardTitle $adaptive={adaptive}>{name}</CardTitle>
+      </CardContent>
     </CardContainer>
   )
 }
