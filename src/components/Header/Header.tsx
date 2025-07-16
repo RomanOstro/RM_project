@@ -1,12 +1,11 @@
-
-import { Button } from "../UI/Button/Button";
 import BubleImage from '../../assets/images/buble.png';
 import {
   Br, BubleImg, Elements, HeaderContainer, ButtonText, HeaderTitleblock, HeaderTitleBottom,
-  HeaderTitleTop, HeadingBlock, HeadingBlockDescription, Italic, GradientGreen, GradientBlue, PortalImage, LaserImage
+  HeaderTitleTop, HeadingBlock, HeadingBlockDescription, Italic, GradientGreen, GradientBlue, PortalImage, LaserImage,
+  ButtonHeader,
+  IconButton
 } from "./style";
 import { Logo } from "../Logo/Logo";
-import ButtonIcon from '../../assets/icons/button-watch-icon.svg?react';
 import ImagePortal from '../../assets/images/rick-morty.png'
 import ImageGun from '../../assets/images/laser-decor.png'
 import { Link } from "react-router-dom";
@@ -47,24 +46,23 @@ export const Header = () => {
 
         <HeadingBlock>
 
-          <Button
+          <ButtonHeader
             $background='var(--bg-button-gradient)'
             $border="none"
             $borderRadius="100px"
-            $padding="15px 26px"
             type="button"
           >
-            <ButtonIcon />
+            <IconButton />
             <ButtonText>Watch Now</ButtonText>
-          </Button>
+          </ButtonHeader>
 
-          <div>
-            <HeadingBlockDescription>
-              Brilliant but boozy scientist Rick hijacks his fretful
-              <Br />teenage grandson, Morty, for wild escapades
-              <Br />in other worlds and alternate dimensions.
-            </HeadingBlockDescription>
-          </div>
+
+          <HeadingBlockDescription>
+            Brilliant but boozy scientist Rick hijacks his fretful
+            <Br />teenage grandson, Morty, for wild escapades
+            <Br />in other worlds and alternate dimensions.
+          </HeadingBlockDescription>
+
         </HeadingBlock>
 
       </HeaderContainer >

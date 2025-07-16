@@ -1,25 +1,16 @@
-import { ButtonElement } from './buttonStyle'
-import type { ButtonHTMLAttributes } from 'react';
+import { ButtonElement, type TBUttonProps } from './buttonStyle'
 
 
-interface TButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  $background?: string;
-  $border?: string;
-  $borderRadius?: string;
-  $padding?: string;
-  $outline?: string;
-}
 
-export const Button = (props: TButton) => {
+export const Button = (props: TBUttonProps,) => {
 
   return (
     <>
       <ButtonElement
-        {...props}>
+        {...props} >
         {props.children}
       </ButtonElement>
     </>
 
   )
 }
-

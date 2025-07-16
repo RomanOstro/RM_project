@@ -1,6 +1,7 @@
+import type { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface TBUttonProps {
+export interface TBUttonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   $background?: string;
   $border?: string;
   $borderRadius?: string;
