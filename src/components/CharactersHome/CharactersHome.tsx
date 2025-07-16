@@ -1,6 +1,5 @@
-import { ContainerCharacters, HeadingBlock, HeadingTitle } from './charactersHomeStyle';
+import { ButtonViewAll, ContainerCharacters, HeadingBlock, HeadingTitle, sliderCharacterBreakpoints } from './charactersHomeStyle';
 import { Card } from '../UI/Card/Card';
-import { Button } from '../UI/Button/Button';
 import { Slider } from '../UI/Slider/Slider';
 import UnknowgImage from '../../assets/images/card-image-unknown.jpeg'
 import { useQuery } from '@tanstack/react-query';
@@ -12,8 +11,8 @@ import { Link } from 'react-router-dom';
 export const CharactersHome = () => {
 
   const { data, error, isPending } = useQuery({
-    queryKey: ['getCharacter'], //page добавляем для отслеживания изменения ключа page, тогда будет перерендер(как массив зависимостей)
-    queryFn: (meta) => getCharacters({ signal: meta.signal}),
+    queryKey: ['getCharacter'],
+    queryFn: (meta) => getCharacters({ signal: meta.signal }),
   })
 
   if (isPending) {
@@ -30,15 +29,15 @@ export const CharactersHome = () => {
       <HeadingBlock>
         <HeadingTitle>Meet the cast</HeadingTitle>
         <Link to={'/cast'}>
-          <Button
+          <ButtonViewAll
             $border='1px solid var(--green)'
             $borderRadius='8px'
             $padding='10px 24px'
-          >View All</Button>
+          >View All</ButtonViewAll>
         </Link>
       </HeadingBlock>
 
-      {data && <Slider $name={'Character'}data={data.results} slidesPerView={5}>
+      {data && <Slider $breakpoints={sliderCharacterBreakpoints} $name={'Character'} data={data.results} >
         {(item) => {
           return <Card
             name={item.name ? item.name : ''}

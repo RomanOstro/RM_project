@@ -15,22 +15,25 @@ interface TSlider<T extends TId> { // расширяем тип данных
   children: (item: T) => ReactNode
   slidesPerView?: number;
   $name?: string;
+  $breakpoints?: Record<number,{slidesPerView:number}>
 }
 
 export const Slider = <T extends TId,>(props: TSlider<T>) => {
-  const { data, children, slidesPerView = 4, $name } = props;
-
+  const { data, children, slidesPerView = 4, $name , $breakpoints} = props;
+  console.log($breakpoints)
   return (
     <SwiperWrapper>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={10}
+        spaceBetween={0}
         slidesPerView={slidesPerView}
         speed={1000}
+        
         navigation={{
           prevEl: `.swiper__button-prev_${$name}`,
           nextEl: `.swiper__button-next_${$name}`,
         }}
+        breakpoints={$breakpoints}
       >
         {data.map((item: T, index) => {
           return (

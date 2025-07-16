@@ -316,11 +316,11 @@ export const BubleImg = styled.img`
 `;
 
 export const PortalImage = styled.img`
-  height: 145px;
-  left: 480px;
+  height: 200px;
+  left: 475px;
   position: absolute;
-  top: 103px;
-  width: 225px;
+  top: 45px;
+  width: 280px;
 
   @media screen and (width <= 1480px) {
     left: 237px;
