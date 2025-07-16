@@ -23,7 +23,6 @@ export const CharactersHome = () => {
     return <h1 style={{ fontSize: '40px' }}>{error.message}</h1>
   }
 
-
   return (
     <ContainerCharacters>
       <HeadingBlock>

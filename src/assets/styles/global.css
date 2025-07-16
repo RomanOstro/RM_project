@@ -47,7 +47,7 @@ ol {
 }
 
 /* изменил обшие стили слайдера!!! */
-.swiper-slide {
+.swiper .swiper-slide {
   display: flex;
   justify-content: center;
 }

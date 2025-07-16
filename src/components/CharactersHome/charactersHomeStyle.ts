@@ -51,7 +51,7 @@ export const HeadingTitle = styled.h2`
 
 // --- настройка слайдера в компоненте CharacterHome -- start
 export const sliderCharacterBreakpoints = {
-  "1680": {
+  "1620": {
     slidesPerView: 5,
   },
   "1340": {
