@@ -19,9 +19,8 @@ export const Input = (props: IInputProps) => {
   useEffect(() => {
     if (debounceValue) {
       setSearchParam({ name: debounceValue });
-    } else {
-      setSearchParam({});
-    }
+    } 
+      return;
   }, [debounceValue, setSearchParam]);
 
   const handlerSearch = (e: ChangeEvent<HTMLInputElement>) => {

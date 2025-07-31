@@ -61,4 +61,3 @@ export const UniverseLayout = () => {
     </CastContainer>
   );
 };
-// "30%"

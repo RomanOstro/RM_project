@@ -167,6 +167,7 @@ export const BgText = styled.p`
   -webkit-text-fill-color: #191d29;
   background: linear-gradient(45deg, var(--blue), var(--green));
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 100px;
   font-weight: 800;
   opacity: 0.1;
@@ -305,7 +306,7 @@ export const CardDetailsLayout = styled(LayoutCardDetails)`
 
 //----episode Card
 export const EpisodesContainer = styled(CardDetails)`
-  height: 408px;
+  height: 398px;
   overflow: hidden;
   border-radius: 6px;
 

@@ -45,6 +45,7 @@ export const getEpisodes = async (
   props: IGetParams
 ): Promise<IResponse<IEpisode>> => {
   const { page, name, signal } = props;
+
   const url = new URL(`${BASE_URL}/episode`);
   if (name) {
     url.searchParams.set("name", name);
