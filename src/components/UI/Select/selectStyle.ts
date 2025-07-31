@@ -12,7 +12,7 @@ export const SelectElement = styled.select<ISelectProps>`
   border: none;
   outline: none;
   color: var(--main-color);
-  width: ${(prop) => prop.$width || "auto"};
+  width: ${({$width }) => $width || "auto"};
 `;
 
 export const OptionItem = styled.option`

@@ -11,4 +11,8 @@ padding-block-start: 60px;
 padding-block-end:${prop => prop.$paddingB ?? '60px'};
 width: 227px;
 margin-block-end: ${prop => prop.$marginB ?? '0px'};
+
+@media screen and (width <= 570px) {
+    padding-block-start: 20px;
+  }
 `

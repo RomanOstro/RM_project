@@ -1,7 +1,7 @@
-import type { ChangeEvent } from "react";
-import { InputItem } from "./inputStyle"
+import { useEffect, useState, type ChangeEvent } from "react";
+import { InputItem } from "./inputStyle";
 import { useSearchParams } from "react-router-dom";
-
+import { useDebounce } from "../../../hooks/useDebounse";
 
 interface IInputProps {
   $width: string;
@@ -10,21 +10,33 @@ interface IInputProps {
 export const Input = (props: IInputProps) => {
   const { $width } = props;
   const [searchParams, setSearchParam] = useSearchParams();
+  const [inputValue, setInputValue] = useState<string>(
+    searchParams.get("name") || ""
+  );
+
+  const debounceValue = useDebounce(inputValue, 500);
+
+  useEffect(() => {
+    if (debounceValue) {
+      setSearchParam({ name: debounceValue });
+    } else {
+      setSearchParam({});
+    }
+  }, [debounceValue, setSearchParam]);
 
   const handlerSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    if (value) {
-      setSearchParam({ name: value })
-    } else {
-      setSearchParam({})
-    }
-  }
+    setInputValue(value);
+  };
 
   return (
     <>
-      <InputItem $width={$width} placeholder="Search name..." value={searchParams.get('name') || ''} onChange={handlerSearch} />
+      <InputItem
+        $width={$width}
+        placeholder="Search name..."
+        value={inputValue}
+        onChange={handlerSearch}
+      />
     </>
-  )
-}
-
-
+  );
+};

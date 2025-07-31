@@ -5,6 +5,8 @@ import SeparatorImage from "../../assets/svg/separator.svg?react";
 import StatusCardLayoutImg from "../../assets/svg/statusCardLayout.svg?react";
 import LayoutCardDetails from "../../assets/svg/cardDetailsLayout.svg?react";
 import LayoutEpisodes from "../../assets/svg/cardEpisodesLayout.svg?react";
+import SmallImageBg from "../../assets/images/header-background.png";
+import StarsImageBg from "../../assets/images/bg-stars.png";
 
 export const PageContainer = styled.section`
   display: flex;
@@ -17,6 +19,13 @@ export const PageContainer = styled.section`
   object-fit: cover;
   overflow: hidden;
   padding-bottom: 86px;
+
+  @media screen and (width <= 570px) {
+    padding-bottom: 20px;
+    background-position-x: 70%;
+    object-fit: cover;
+    background-image: url(${SmallImageBg});
+  }
 `;
 
 export const PageContent = styled.div`
@@ -25,7 +34,35 @@ export const PageContent = styled.div`
   justify-content: space-between;
   margin: 146px 90px 0 180px;
   position: relative;
-  min-width: 1530px;
+  width: 1530px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(${StarsImageBg});
+    object-fit: contain;
+    background-position: center;
+    width: 90%;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (width <= 1860px) {
+    margin: 70px 90px 0 180px;
+    width: 1030px;
+  }
+
+  @media screen and (width <= 1140px) {
+    margin: 70px 0 0 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media screen and (width <= 570px) {
+    margin: 35px 0 0 0;
+  }
 `;
 
 //---- Стили блока с картинкой
@@ -34,6 +71,12 @@ export const CastImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (width <= 1140px) {
+    margin-bottom: 15px;
+  }
+  @media screen and (width <= 570px) {
+    margin-bottom: 5px;
+  }
 `;
 
 export const CastName = styled.h1`
@@ -42,6 +85,14 @@ export const CastName = styled.h1`
   font-weight: 600;
   margin-bottom: 32px;
   text-align: center;
+
+  @media screen and (width <= 1860px) {
+    font-size: 38px;
+  }
+
+  @media screen and (width <= 1140px) {
+    margin-bottom: 5px;
+  }
 `;
 
 export const ImageBlock = styled.div`
@@ -51,6 +102,11 @@ export const ImageBlock = styled.div`
 export const ImageCastLayout = styled(LayoutImageBox)`
   height: 400px;
   width: 400px;
+
+  @media screen and (width <= 1860px) {
+    height: 300px;
+    width: 290px;
+  }
 `;
 
 export const ImageCast = styled.img`
@@ -66,6 +122,13 @@ export const ImageWrapper = styled.div`
   position: absolute;
   top: 52px;
   width: 300px;
+
+  @media (width <= 1860px) {
+    height: 220px;
+    left: 34px;
+    top: 40px;
+    width: 224px;
+  }
 `;
 
 //-------- Декор
@@ -73,6 +136,10 @@ export const ImageWrapper = styled.div`
 export const Separator = styled(SeparatorImage)`
   height: 320px;
   width: 2px;
+
+  @media screen and (width <= 1140px) {
+    display: none;
+  }
 `;
 
 export const BgTextWrapper = styled.div`
@@ -81,6 +148,14 @@ export const BgTextWrapper = styled.div`
   top: 50%;
   -webkit-transform: translate(-50%) rotate(-90deg);
   transform: translate(-50%) rotate(-90deg);
+
+  @media screen and (width <= 1140px) {
+    left: 8%;
+  }
+
+  @media screen and (width <= 720px) {
+    display: none;
+  }
 `;
 
 export const BgText = styled.p`
@@ -93,6 +168,10 @@ export const BgText = styled.p`
   font-weight: 800;
   opacity: 0.1;
   text-align: center;
+
+  @media screen and (width <= 1860px) {
+    font-size: 70px;
+  }
 `;
 
 //-----castDetails
@@ -121,23 +200,60 @@ export const CardInfo = styled.div`
   width: 100%;
   top: 0;
   left: 0;
+
+  @media (width <= 1860px) {
+    padding-block-start: 14px;
+    padding-inline-start: 22px;
+    gap: 6px;
+  }
+
+  @media (width <= 570px) {
+    padding-block-start: 7px;
+    padding-inline-start: 14px;
+  }
 `;
 
 export const CardSubtitle = styled.p`
   font-size: 40px;
   font-weight: 600;
   color: var(--main-color);
+
+  @media (width <= 1860px) {
+    font-size: 24px;
+  }
+
+  @media screen and (width <= 570px) {
+    font-size: 18px;
+  }
 `;
 
 export const CardTitle = styled.h2`
   font-size: 20px;
   font-weight: 400;
   color: var(--main-color);
+
+  @media (width <= 1860px) {
+    font-size: 16px;
+  }
+
+  @media screen and (width <= 570px) {
+    font-size: 9px;
+  }
 `;
 
 export const CardIcon = styled.img`
   height: 48px;
   width: 48px;
+
+  @media (width <= 1860px) {
+    height: 28px;
+    width: 28px;
+  }
+
+  @media (width <= 570px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 //-- statusCard
@@ -145,6 +261,16 @@ export const StatusCard = styled.div`
   height: 174px;
   width: 240px;
   position: relative;
+
+  @media (width <= 1860px) {
+    height: 120px;
+    width: 166px;
+  }
+
+  @media (width <= 570px) {
+    height: 76px;
+    width: 104px;
+  }
 `;
 
 export const StatusCardLayout = styled(StatusCardLayoutImg)`
@@ -157,6 +283,16 @@ export const StatusCardLayout = styled(StatusCardLayoutImg)`
 export const CardDetails = styled(ImageBlock)`
   height: 174px;
   max-width: 800px;
+
+  @media (width <= 1860px) {
+    height: 120px;
+    max-width: 545px;
+  }
+
+  @media screen and (width <= 570px) {
+    height: 76px;
+    max-width: 351px;
+  }
 `;
 
 export const CardDetailsLayout = styled(LayoutCardDetails)`
@@ -169,6 +305,14 @@ export const EpisodesContainer = styled(CardDetails)`
   height: 408px;
   overflow: hidden;
   border-radius: 6px;
+
+  @media (width <= 1860px) {
+    height: 280px;
+  }
+
+  @media screen and (width <= 570px) {
+    height: 185px;
+  }
 `;
 
 export const EpisodesInfo = styled(CardInfo)`
@@ -198,10 +342,19 @@ export const EpisodesContainerLayout = styled(LayoutEpisodes)`
 export const EpisodeList = styled.ul`
   list-style-type: disc;
   padding: 36px 0 30px 62px;
+
+  @media screen and (width <= 570px) {
+    padding: 20px 0 30px 30px;
+  }
 `;
 
 export const EpisodeListItem = styled.li`
   font-size: 40px;
   font-weight: 600;
   margin-top: 8px;
+
+  @media (width <= 1860px) {
+    font-size: 24px;
+    margin-top: 6px;
+  }
 `;
