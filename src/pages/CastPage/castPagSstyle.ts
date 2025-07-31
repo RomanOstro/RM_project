@@ -41,12 +41,15 @@ export const PageContent = styled.div`
     position: absolute;
     background: url(${StarsImageBg});
     object-fit: contain;
-    background-position: center;
     width: 90%;
-    height: 50%;
+    height: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    @media screen and (width <= 570px) {
+      display: none;
+    }
   }
 
   @media screen and (width <= 1860px) {
