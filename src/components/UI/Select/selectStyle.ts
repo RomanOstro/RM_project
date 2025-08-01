@@ -5,6 +5,9 @@ interface ISelectProps {
 }
 
 export const SelectElement = styled.select<ISelectProps>`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
   background-color: var(--blue);
   height: 100%;
   padding: 0.4em;

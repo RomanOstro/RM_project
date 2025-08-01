@@ -14,14 +14,13 @@ interface IPaginationProps {
 
 export const Pagination = (props: IPaginationProps) => {
   const { totalPage } = props;
-
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
 
   const setPage = (page: number) => {
     const newParam = new URLSearchParams(searchParams);
     newParam.set("page", page.toString());
-    setSearchParams(newParam, { replace: false });
+    setSearchParams(newParam);
   };
 
   const nextHendler = () => setPage(Math.min(currentPage + 1, totalPage));

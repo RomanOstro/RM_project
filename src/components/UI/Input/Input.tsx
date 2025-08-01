@@ -30,7 +30,7 @@ export const Input = (props: IInputProps) => {
       newParam.delete("name");
     }
 
-    return setSearchParam(newParam, { replace: false });
+    return setSearchParam(newParam, { replace: true });
   }, [debounceValue, setSearchParam, searchParams]);
 
   const handlerSearch = (e: ChangeEvent<HTMLInputElement>) => {
