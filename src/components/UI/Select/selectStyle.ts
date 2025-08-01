@@ -5,6 +5,7 @@ interface ISelectProps {
 }
 
 export const SelectElement = styled.select<ISelectProps>`
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 0;
