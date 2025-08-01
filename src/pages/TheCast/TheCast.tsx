@@ -10,9 +10,6 @@ export const TheCast = () => {
   const name = searchParams.get("name") || "";
   const currentPage = Number(searchParams.get("page")) || 1;
 
-
-console.log("Current search params:", Object.fromEntries(searchParams.entries()));
-
   const { data, isPending, error } = useQuery({
     queryKey: ["getCharacter", name, currentPage],
     queryFn: (meta) =>

@@ -61,4 +61,8 @@ export const PaginationButton = styled.button<IPaginationButton>`
   &:hover:not(:disabled) {
     color: #fbff00ff;
   }
+
+  @media (width <= 680px) {
+    padding: 0;
+  }
 `;

@@ -18,25 +18,19 @@ export const Pagination = (props: IPaginationProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
 
-  const nextHendler = () => {
-    const nexpPage = Math.min(currentPage + 1, totalPage).toString();
-    setSearchParams({ page: nexpPage });
+  const setPage = (page: number) => {
+    const newParam = new URLSearchParams(searchParams);
+    newParam.set("page", page.toString());
+    setSearchParams(newParam, { replace: false });
   };
 
-  const prevHenpler = () => {
-    const prevPage = Math.max(currentPage - 1, 1).toString();
-    setSearchParams({ page: prevPage });
-  };
+  const nextHendler = () => setPage(Math.min(currentPage + 1, totalPage));
 
-  const jumpNextHendler = () => {
-    const nexpPage = Math.min(currentPage + 3, totalPage).toString();
-    setSearchParams({ page: nexpPage });
-  };
+  const prevHenpler = () => setPage(Math.max(currentPage - 1, 1));
 
-  const jumpPrevHenpler = () => {
-    const prevPage = Math.max(currentPage - 3, 1).toString();
-    setSearchParams({ page: prevPage });
-  };
+  const jumpNextHendler = () => setPage(Math.min(currentPage + 3, totalPage));
+
+  const jumpPrevHenpler = () => setPage(Math.max(currentPage - 3, 1));
 
   return (
     <PaginationContainer>
@@ -49,9 +43,7 @@ export const Pagination = (props: IPaginationProps) => {
 
         {currentPage > 2 && (
           <PaginationItem>
-            <PaginationButton onClick={() => setSearchParams({ page: "1" })}>
-              1
-            </PaginationButton>
+            <PaginationButton onClick={() => setPage(1)}>1</PaginationButton>
           </PaginationItem>
         )}
         {currentPage > 3 && (
@@ -87,9 +79,7 @@ export const Pagination = (props: IPaginationProps) => {
         )}
         {currentPage + 1 < totalPage && (
           <PaginationItem>
-            <PaginationButton
-              onClick={() => setSearchParams({ page: totalPage.toString() })}
-            >
+            <PaginationButton onClick={() => setPage(totalPage)}>
               {totalPage}
             </PaginationButton>
           </PaginationItem>

@@ -56,6 +56,7 @@ export const ContentTitle = styled.h2`
 
 export const SearchBox = styled.div`
   border-radius: 3px;
+  border: 1px solid var(--blue);
   overflow: hidden;
   height: 45px;
   display: flex;
