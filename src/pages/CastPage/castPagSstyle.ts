@@ -217,17 +217,17 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const CardSubtitle = styled.p`
+export const CardSubtitle = styled.p<{ $long?: boolean }>`
   font-size: 40px;
   font-weight: 600;
   color: var(--main-color);
 
   @media (width <= 1860px) {
-    font-size: 24px;
+    font-size: ${($long) => (!$long ? "24px" : "21px")};
   }
 
   @media screen and (width <= 570px) {
-    font-size: 18px;
+    font-size: ${($long) => (!$long ? "18px" : "13px")};
   }
 `;
 

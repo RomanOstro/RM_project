@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getEpisodes } from "../../apiHome";
+import { getEpisodes } from "../../shared/api/apiHome";
 import { TextCard } from "../../components/UI/TextCard/TextCard";
 import { useSearchParams } from "react-router-dom";
 import { EpisodesContent, MissingSection } from "./episodesStyle";

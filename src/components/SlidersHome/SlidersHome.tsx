@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { Slider } from '../UI/Slider/Slider'
-import { getEpisodes, getLocation } from '../../apiHome'
+import { getEpisodes, getLocation } from '../../shared/api/apiHome'
 import { TextCard } from '../UI/TextCard/TextCard'
 import { ListTitle, SliderList, SlidersContainer, SlidersHomeBreakpoints } from './slidersHomeStyles'
 

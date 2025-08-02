@@ -4,7 +4,7 @@ import type {
   ILocation,
   IResponse,
   ISingleCharacter,
-} from "./types/apiTypes";
+} from "../../types/apiTypes";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 

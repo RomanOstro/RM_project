@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
-import { getSingleCharacter, multiFatch } from "../../apiHome";
+import { getSingleCharacter, multiFatch } from "../../shared/api/apiHome";
 import {
   CardTitle,
   CastDetailsContainer,
@@ -102,7 +102,9 @@ export const CastPage = () => {
               <CardInfo>
                 <CardIcon src={SpeciesIcon} />
                 <CardTitle>Species</CardTitle>
-                <CardSubtitle>{dataCharacterSingle?.species}</CardSubtitle>
+                <CardSubtitle $long={true}>
+                  {dataCharacterSingle?.species}
+                </CardSubtitle>
               </CardInfo>
             </StatusCard>
             <StatusCard>

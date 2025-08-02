@@ -1,4 +1,4 @@
-import { getCharacters } from "../../apiHome";
+import { getCharacters } from "../../shared/api/apiHome";
 import { useQuery } from "@tanstack/react-query";
 import { Content, MissingSection } from "./theCastStyle";
 import { Card } from "../../components/UI/Card/Card";
